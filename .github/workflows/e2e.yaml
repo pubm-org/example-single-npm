@@ -51,5 +51,5 @@ jobs:
 
       - name: Verify deployment
         run: |
-          sleep 10
+          sleep 30
           npm view @pubm-test/single-npm@${{ env.VERSION }}
