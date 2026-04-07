@@ -45,7 +45,7 @@ jobs:
           "
 
       - name: Publish
-        run: bunx pubm --mode ci --phase publish --any-branch
+        run: bunx pubm --mode ci --phase publish --any-branch --skip-release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
