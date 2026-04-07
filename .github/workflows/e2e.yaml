@@ -26,7 +26,9 @@ jobs:
         run: bun add pubm@${{ inputs.pubm_version || github.event.client_payload.pubm_version || 'latest' }} @pubm/core@${{ inputs.pubm_version || github.event.client_payload.pubm_version || 'latest' }}
 
       - name: Setup npm auth
-        run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
+          echo "access=public" >> .npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
